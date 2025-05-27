@@ -2,6 +2,6 @@
 mkdir build
 cd build
 
-cmake .. -G "NMake Makefiles" -DCMAKE_INSTALL_PREFIX=%PREFIX%
-nmake
-nmake install
+cmake .. -G "Ninja" -DCMAKE_INSTALL_PREFIX=%PREFIX%
+ninja
+ninja install
