@@ -12,8 +12,7 @@ requirements:
   build:
     - cmake
     - ninja # optional, only if you use -G Ninja
-    # - {{ compiler('cxx') }}
-    - vs2022_win-64
+    - {{ compiler('cxx') }}
 
 about:
   summary: "A minimal C++ application built with CMake"
