@@ -1,0 +1,37 @@
+name: Build Conda Package on Windows
+
+on: push
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          use-mamba: true
+          channels: conda-forge,defaults
+          auto-activate-base: true
+          activate-environment: ""
+
+      - name: Install conda-build
+        run: |
+          conda install -y conda-build
+
+      - name: Debug Conda info
+        run: conda info
+
+      - name: Build Conda package
+        run: |
+          conda build conda-recipe 
+
+      - name: Upload built package
+        uses: actions/upload-artifact@v4
+        with:
+          name: conda-package-win
+          path: C:\Miniconda\conda-bld\win-64\*.tar.bz2

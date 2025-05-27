@@ -1,0 +1,20 @@
+package:
+  name: my-cpp-app
+  version: "0.1.0"
+
+source:
+  path: ../ # Assumes recipe is in conda-recipe/ and code is one level up
+
+build:
+  number: 0
+  script: bld.bat # for Windows (build.sh will be used on Unix)
+
+requirements:
+  build:
+    - cmake
+    - ninja # optional, only if you use -G Ninja
+    - {{ compiler('cxx') }}
+
+about:
+  summary: "A minimal C++ application built with CMake"
+  license: MIT
