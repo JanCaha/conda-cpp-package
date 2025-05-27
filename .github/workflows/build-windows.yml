@@ -25,6 +25,10 @@ jobs:
 
       - name: Debug Conda info
         run: conda info
+      
+      - name: Conda render recipe
+        run: |
+            conda render conda-recipe
 
       - name: Build Conda package
         run: |
