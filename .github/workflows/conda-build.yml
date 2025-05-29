@@ -38,7 +38,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: conda-package-win
-          path: C:\Miniconda\conda-bld\win-64\*.tar.bz2
+          path: C:\Miniconda\conda-bld\win-64\*.conda
 
   build-linux:
     runs-on: ubuntu-latest
@@ -75,4 +75,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: conda-package-linux
-          path: /usr/share/miniconda/conda-bld/linux-64/*.tar.bz2
+          path: /usr/share/miniconda/conda-bld/linux-64/*.conda
