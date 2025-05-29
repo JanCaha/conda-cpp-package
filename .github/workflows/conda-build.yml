@@ -32,7 +32,7 @@ jobs:
 
       - name: Build Conda package
         run: |
-          conda build conda-recipe
+          conda build conda-recipe --variant-config-files conda/variants/windows.yaml 
 
       - name: Upload built package
         uses: actions/upload-artifact@v4
