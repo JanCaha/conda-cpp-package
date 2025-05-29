@@ -13,7 +13,7 @@ add_library(my_app_static STATIC
 
 include(GNUInstallDirs)
 
-install(TARGETS my_cpp_app
+install(TARGETS my_cpp_app my_app_shared my_app_static
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
