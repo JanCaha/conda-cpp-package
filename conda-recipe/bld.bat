@@ -7,6 +7,6 @@ cl.exe /?
 mkdir build
 cd build
 
-cmake .. -G "Ninja" -DCMAKE_INSTALL_PREFIX=%PREFIX%
+cmake .. -G "Ninja" -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX%
 cmake --build . --config Release
-cmake --install . --prefix %PREFIX%
+cmake --install . --prefix %LIBRARY_PREFIX%
